@@ -185,7 +185,7 @@ void UART_sendByteNonBlocking(const uint8_t a_data)
  * 						   It can be used whether Rx interrupt is enabled or not
  * 						   If rx interrupt is enabled it will be disabled temporarely
  * 						   during the function time then re-enabled again
- * 						   It will not generate Rx interrupt after recieving even if Rx
+ * 						   It will not generate Rx interrupt after receiving even if Rx
  * 						   interrupt is enabled
  * [Args]:
  * [in]: void
@@ -281,7 +281,7 @@ void UART_sendString(const char * a_str)
  * 						   2. reaching the maximum value a_maxSize
  * [Args]:
  * [in]: uint8_t * a_str
- * 		 array to store recived string
+ * 		 array to store received string
  * [in]: uint8_t a_maxSize
  * 		 maximum size of the passed array to receive till
  * 		 it reached.
