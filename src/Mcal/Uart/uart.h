@@ -137,7 +137,7 @@ void UART_init(const ST_UartConfig * a_uartConfig);
 
 /*
  * [Function Name]: UART_setRxInterruptCallback
- * [Function Description]: sets the callback function of the recieve interrupt
+ * [Function Description]: sets the callback function of the receive interrupt
  * 						   should be used only if the rx interrupt is enabled.
  * 						   Otherwise it's meaningless
  * [Args]:
@@ -192,8 +192,8 @@ void UART_sendByteBlocking(const uint8_t a_data);
 void UART_sendByteNonBlocking(const uint8_t a_data);
 
 /*
- * [Function Name]: UART_recieveByteBlocking
- * [Function Description]: The function uses busy wait till a byte is recieved
+ * [Function Name]: UART_receiveByteBlocking
+ * [Function Description]: The function uses busy wait till a byte is received
  * 						   It can be used whether Rx interrupt is enabled or not
  * 						   If rx interrupt is enabled it will be disabled temporarely
  * 						   during the function time then re-enabled again
@@ -202,23 +202,23 @@ void UART_sendByteNonBlocking(const uint8_t a_data);
  * [Args]:
  * [in]: void
  * [Return]: uint8_t
- * 			 the recieved byte
+ * 			 the received byte
  */
-uint8_t UART_recieveByteBlocking(void);
+uint8_t UART_receiveByteBlocking(void);
 
 /*
- * [Function Name]: UART_recieveByteNonBlocking
+ * [Function Name]: UART_receiveByteNonBlocking
  * [Function Description]: The function checks if the receive buffer has data,
  * 						   It will return the data, otherwise it will return 0.
  * 						   It doesn't use any busy wait.
  * 						   The best use of this function is to be called in callback
- * 						   function after an Rx interrupt has occurred to get the recieved byte.
+ * 						   function after an Rx interrupt has occurred to get the received byte.
  * [Args]:
  * [in]: void
  * [Return]: uint8_t
- * 			 the recieved byte
+ * 			 the received byte
  */
-uint8_t UART_recieveByteNonBlocking(void);
+uint8_t UART_receiveByteNonBlocking(void);
 
 /*
  * [Function Name]: UART_sendString
@@ -233,16 +233,16 @@ void UART_sendString(const char * a_str);
 
 /*
  * [Function Name]: UART_receiveString
- * [Function Description]: The function recieves string using busy wait
+ * [Function Description]: The function receives string using busy wait
  * 						   "polling technique" till
- * 						   1. the UART_RECIEVE_STRING_TILL is found
+ * 						   1. the UART_RECEIVE_STRING_TILL is found
  * 						   	  this value can be modified in the config file
  * 						   2. reaching the maximum value a_maxSize
  * [Args]:
  * [in]: uint8_t * a_str
  * 		 array to store recived string
  * [in]: uint8_t a_maxSize
- * 		 maximum size of the passed array to recieve till
+ * 		 maximum size of the passed array to receive till
  * 		 it reached
  * [Return]: uint8_t
  */

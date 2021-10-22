@@ -17,9 +17,9 @@
  *                                Definitions                                  *
  *******************************************************************************/
 
-/* used in UART_receiveString function to recieve string
+/* used in UART_receiveString function to receive string
  * till this character is found before reaching the maximum size of the array
  */
-#define UART_RECIEVE_STRING_TILL			'\r'
+#define UART_RECEIVE_STRING_TILL			'\r'
 
 #endif /* __UART_CONFIG_H__ */
