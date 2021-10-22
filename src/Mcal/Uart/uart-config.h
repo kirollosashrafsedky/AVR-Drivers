@@ -22,4 +22,10 @@
  */
 #define UART_RECEIVE_STRING_TILL			'\r'
 
+/* Define F_CPU if not defined to calculate baid rate correctly */
+#ifndef F_CPU
+#define F_CPU 				1000000UL
+#endif /* F_CPU */
+
+
 #endif /* __UART_CONFIG_H__ */
