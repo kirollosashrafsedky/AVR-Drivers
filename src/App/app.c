@@ -6,6 +6,7 @@
 #include "../Mcal/WatchDog/watchdog.h"
 #include "../Mcal/Adc/adc.h"
 #include "../Mcal/Uart/uart.h"
+#include "../Mcal/Spi/spi.h"
 
 #include "../Hal/DC-Motor/dc-motor.h"
 #include "../Hal/Led/led.h"

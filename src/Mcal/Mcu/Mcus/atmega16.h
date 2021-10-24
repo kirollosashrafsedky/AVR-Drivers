@@ -74,6 +74,11 @@
 #define UBRRL_R 	(*(volatile uint8_t*)(0x29))
 #define UBRRH_R 	(*(volatile uint8_t*)(0x40))
 
+/** SPI **/
+#define SPCR_R 		(*(volatile uint8_t*)(0x2D))
+#define SPSR_R 		(*(volatile uint8_t*)(0x2E))
+#define SPDR_R 		(*(volatile uint8_t*)(0x2F))
+
 /* start address of PORTx = PORTA address */
 #define PORT_START_LOC		(0x3B)
 /* start address of DDRx = DDRA address */
@@ -252,6 +257,23 @@
 #define UPM1			5
 #define UMSEL			6
 #define URSEL			7
+
+/** SPI **/
+
+/* SPCR */
+#define SPR0			0
+#define SPR1			1
+#define CPHA			2
+#define CPOL			3
+#define MSTR			4
+#define DORD			5
+#define SPE				6
+#define SPIE			7
+
+/* SPSR */
+#define SPI2X			0
+#define WCOL			6
+#define SPIF			7
 
 /* Interrupt vectors */
 /* External Interrupt Request 0 */

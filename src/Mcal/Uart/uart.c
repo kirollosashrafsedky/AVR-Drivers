@@ -63,10 +63,10 @@ void UART_init(const ST_UartConfig * a_uartConfig)
 	 ***********************************************************************/
 	UCSRB_R = SELECT_BIT(RXEN) | SELECT_BIT(TXEN);
 
-	/* inset the value of rx interrupt in RXCIE */
+	/* insert the value of rx interrupt in RXCIE */
 	COPY_BITS(UCSRB_R, 0x01, a_uartConfig->rxInterrupt, RXCIE);
 
-	/* inset the value of tx interrupt in TXCIE */
+	/* insert the value of tx interrupt in TXCIE */
 	COPY_BITS(UCSRB_R, 0x01, a_uartConfig->txInterrupt, TXCIE);
 
 	/************************** UCSRC Description **************************
@@ -76,13 +76,13 @@ void UART_init(const ST_UartConfig * a_uartConfig)
 	 ***********************************************************************/
 	UCSRC_R = SELECT_BIT(URSEL);
 
-	/* inset the value of the parity in UPM0, UPM1 */
+	/* insert the value of the parity in UPM0, UPM1 */
 	COPY_BITS(UCSRC_R, 0x03, a_uartConfig->parity, UPM0);
 
-	/* inset the value of the stop bit(s) number in USBS */
+	/* insert the value of the stop bit(s) number in USBS */
 	COPY_BITS(UCSRC_R, 0x01, a_uartConfig->stopBit, USBS);
 
-	/* inset the value of the character size in UCSZ0, UCSZ1 */
+	/* insert the value of the character size in UCSZ0, UCSZ1 */
 	COPY_BITS(UCSRC_R, 0x03, a_uartConfig->charSize, UCSZ0);
 
 	/* Calculate the UBRR register value */
@@ -258,7 +258,7 @@ uint8_t UART_receiveByteNonBlocking(void)
  * [Args]:
  * [in]: const char * a_str
  * 		 string to be sent
- * [Return]: uint8_t
+ * [Return]: void
  */
 void UART_sendString(const char * a_str)
 {
@@ -287,7 +287,7 @@ void UART_sendString(const char * a_str)
  * 		 it reached.
  * 		 It's the total size considering the null terminator, i.e if
  * 		 max size of 20 is passed, only 19 char will be saved and the 20th is '\0'
- * [Return]: uint8_t
+ * [Return]: void
  */
 void UART_receiveString(uint8_t * a_str, uint8_t a_maxSize)
 {
@@ -308,7 +308,7 @@ void UART_receiveString(uint8_t * a_str, uint8_t a_maxSize)
 	/* get the first character */
 	*a_str = UART_receiveByteBlocking();
 
-	/* loop till the UART_RECEIVE_STRING_TILL is not found */
+	/* loop till the UART_RECEIVE_STRING_TILL is found */
 	while(*a_str != UART_RECEIVE_STRING_TILL)
 	{
 		/* increment the counter and the pointer */

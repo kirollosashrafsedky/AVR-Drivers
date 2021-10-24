@@ -27,12 +27,6 @@
 #include "../../Lib/common.h"
 
 /*******************************************************************************
- *                                Definitions                                  *
- *******************************************************************************/
-
-
-
-/*******************************************************************************
  *                             Types Declaration                               *
  *******************************************************************************/
 
@@ -227,7 +221,7 @@ uint8_t UART_receiveByteNonBlocking(void);
  * [Args]:
  * [in]: const char * a_str
  * 		 string to be sent
- * [Return]: uint8_t
+ * [Return]: void
  */
 void UART_sendString(const char * a_str);
 
@@ -244,7 +238,7 @@ void UART_sendString(const char * a_str);
  * [in]: uint8_t a_maxSize
  * 		 maximum size of the passed array to receive till
  * 		 it reached
- * [Return]: uint8_t
+ * [Return]: void
  */
 void UART_receiveString(uint8_t * a_str, uint8_t a_maxSize);
 

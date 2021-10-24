@@ -11,6 +11,7 @@
 	6. External Interrupt <br>
 	7. Watchdog <br>
 	8. UART <br>
+	9. SPI <br>
  <br><br>
 * Hardware Abstraction Layer <br><br>
 	1. LED <br>
